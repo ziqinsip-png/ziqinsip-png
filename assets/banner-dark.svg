@@ -73,7 +73,7 @@
     </g>
   </g>
 
-  <g class="mono mut" font-size="12" letter-spacing="3.4">
+  <g class="mono mut" font-size="15" letter-spacing="2.4">
     <text class="rise" x="228" y="72">A PERSONAL FIELD NOTES / 2026</text>
   </g>
 
@@ -82,17 +82,17 @@
   </g>
   <rect class="acc sweep" x="228" y="156" width="470" height="3"/>
 
-  <g class="mono" font-size="15">
+  <g class="mono" font-size="17">
     <text class="rise rise-3" x="228" y="192" fill="#ff8759" letter-spacing="1.6">ALIAS / D A T Z</text>
-    <text class="rise rise-3" x="404" y="192" fill="#94978d">·</text>
-    <text class="rise rise-3" x="424" y="192" fill="#94978d" letter-spacing=".4">Mahasiswa Teknik Informatika — FTIK, UNP Kediri</text>
+    <text class="rise rise-3" x="424" y="192" fill="#94978d">·</text>
+    <text class="rise rise-3" x="452" y="192" fill="#94978d" letter-spacing="0">Mahasiswa Teknik Informatika, FTIK UNP Kediri</text>
   </g>
 
-  <g class="mono mut" font-size="11" letter-spacing="2.2">
+  <g class="mono mut" font-size="13" letter-spacing="1.8">
     <text x="228" y="222">WEB SECURITY · PYTHON · HAND TRACKING</text>
   </g>
 
-  <g class="mono" font-size="11" letter-spacing="1.6" fill="#94978d">
+  <g class="mono" font-size="13" letter-spacing="1.6" fill="#94978d">
     <text x="980" y="222" text-anchor="end">ziqintzy.my.id</text>
   </g>
   <rect class="acc caret" x="986" y="212" width="4" height="12"/>

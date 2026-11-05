@@ -12,36 +12,36 @@
     .glide-3 { animation-duration: 3400ms; animation-delay: -2100ms; }
     @keyframes glide {
       from { transform: translateX(0); }
-      to   { transform: translateX(390px); }
+      to   { transform: translateX(310px); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .glide, .glide-2, .glide-3 { animation: none !important; transform: translateX(195px); }
+      .glide, .glide-2, .glide-3 { animation: none !important; transform: translateX(162px); }
     }
   </style>
 
-  <g class="mono mut" font-size="11" letter-spacing="3">
+  <g class="mono mut" font-size="13" letter-spacing="2.4">
     <text x="0" y="16">03 / FOKUS YANG SEDANG KUKERJAKAN</text>
   </g>
 
-  <g class="sans ink" font-size="23" letter-spacing="-.6">
+  <g class="sans ink" font-size="25" letter-spacing="-.6">
     <text x="0" y="66">Keamanan aplikasi web</text>
     <text x="0" y="122">Python &amp; web development</text>
     <text x="0" y="178">Hand tracking</text>
   </g>
 
-  <g class="mono mut" font-size="12">
+  <g class="mono mut" font-size="14">
     <text x="300" y="66">— memahami di mana risiko muncul</text>
-    <text x="330" y="122">— membangun, bukan cuma memakai</text>
+    <text x="340" y="122">— membangun, bukan cuma memakai</text>
     <text x="212" y="178">— menggerakkan layar tanpa menyentuhnya</text>
   </g>
 
   <g>
-    <line class="track" x1="570" y1="82" x2="1000" y2="82"/>
-    <line class="track" x1="570" y1="138" x2="1000" y2="138"/>
-    <line class="track" x1="570" y1="194" x2="1000" y2="194"/>
+    <line class="track" x1="650" y1="82" x2="1000" y2="82"/>
+    <line class="track" x1="650" y1="138" x2="1000" y2="138"/>
+    <line class="track" x1="650" y1="194" x2="1000" y2="194"/>
   </g>
 
-  <g class="glide"><rect class="tick" x="570" y="78" width="26" height="8"/></g>
-  <g class="glide glide-2"><rect class="tick" x="570" y="134" width="26" height="8"/></g>
-  <g class="glide glide-3"><rect class="tick" x="570" y="190" width="26" height="8"/></g>
+  <g class="glide"><rect class="tick" x="650" y="78" width="26" height="8"/></g>
+  <g class="glide glide-2"><rect class="tick" x="650" y="134" width="26" height="8"/></g>
+  <g class="glide glide-3"><rect class="tick" x="650" y="190" width="26" height="8"/></g>
 </svg>
