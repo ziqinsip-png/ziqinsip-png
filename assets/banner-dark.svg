@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" width="1000" height="260" role="img" aria-label="Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri">
+  <title>Ahmad Roziqin — D A T Z</title>
+  <style>
+    .bg { fill: #191b18; }
+    .ink { fill: #eeede7; }
+    .mut { fill: #94978d; }
+    .acc { fill: #ff6a45; }
+    .line { stroke: #eeede7; fill: none; }
+    .faint { stroke: #41443d; fill: none; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .sans { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+    .sweep { transform-box: fill-box; transform-origin: left center; animation: sweep 1400ms cubic-bezier(.2,.65,.3,1) 1 forwards; }
+    @keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    .rise { animation: rise 900ms cubic-bezier(.2,.65,.3,1) 1 both; }
+    .rise-2 { animation-delay: 140ms; }
+    .rise-3 { animation-delay: 300ms; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    .spin { animation: spin 18s linear infinite; transform-origin: 0 0; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .breathe { animation: breathe 5200ms ease-in-out infinite alternate; transform-origin: 110px 130px; }
+    @keyframes breathe { from { transform: scale(.94); } to { transform: scale(1.06); } }
+
+    .dash { stroke-dasharray: 6 10; animation: dash 9000ms linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -320; } }
+
+    .caret { animation: blink 1100ms steps(1, end) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sweep, .rise, .rise-2, .rise-3, .spin, .breathe, .dash, .caret {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <rect class="bg" width="1000" height="260"/>
+
+  <g class="faint" stroke-width="1">
+    <path class="dash" d="M0 12 H1000"/>
+    <path class="dash" d="M0 248 H1000"/>
+  </g>
+  <g class="line" stroke-width="1">
+    <path d="M20 24 V40 M20 24 H36"/>
+    <path d="M980 236 V220 M980 236 H964"/>
+  </g>
+
+  <g class="breathe">
+    <g class="line" stroke-width="1" opacity=".5">
+      <circle cx="110" cy="130" r="52"/>
+      <ellipse cx="110" cy="130" rx="52" ry="19"/>
+      <ellipse cx="110" cy="130" rx="19" ry="52"/>
+      <ellipse cx="110" cy="130" rx="44" ry="38" transform="rotate(-24 110 130)"/>
+    </g>
+    <g transform="translate(110 130) rotate(-23) scale(1 .34)">
+      <g class="spin">
+        <circle cx="72" cy="0" r="0" fill="none"/>
+        <g transform="translate(72 0) scale(1 2.94)">
+          <circle class="acc" r="4"/>
+        </g>
+      </g>
+      <ellipse rx="72" ry="1" fill="none" stroke="#ff6a45" stroke-width="1.4" opacity=".75"/>
+    </g>
+    <g class="ink" opacity=".55">
+      <circle cx="110" cy="130" r="2.2"/>
+      <circle cx="74" cy="98" r="1.6"/>
+      <circle cx="146" cy="158" r="1.6"/>
+    </g>
+  </g>
+
+  <g class="mono mut" font-size="12" letter-spacing="3.4">
+    <text class="rise" x="228" y="72">A PERSONAL FIELD NOTES / 2026</text>
+  </g>
+
+  <g class="sans ink">
+    <text class="rise rise-2" x="226" y="142" font-size="62" font-weight="700" letter-spacing="-2.6">AHMAD ROZIQIN</text>
+  </g>
+  <rect class="acc sweep" x="228" y="156" width="470" height="3"/>
+
+  <g class="mono" font-size="15">
+    <text class="rise rise-3" x="228" y="192" fill="#ff8759" letter-spacing="1.6">ALIAS / D A T Z</text>
+    <text class="rise rise-3" x="404" y="192" fill="#94978d">·</text>
+    <text class="rise rise-3" x="424" y="192" fill="#94978d" letter-spacing=".4">Mahasiswa Teknik Informatika — FTIK, UNP Kediri</text>
+  </g>
+
+  <g class="mono mut" font-size="11" letter-spacing="2.2">
+    <text x="228" y="222">WEB SECURITY · PYTHON · HAND TRACKING</text>
+  </g>
+
+  <g class="mono" font-size="11" letter-spacing="1.6" fill="#94978d">
+    <text x="980" y="222" text-anchor="end">ziqintzy.my.id</text>
+  </g>
+  <rect class="acc caret" x="986" y="212" width="4" height="12"/>
+</svg>
