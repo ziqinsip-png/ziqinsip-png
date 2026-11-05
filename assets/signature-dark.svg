@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 140" width="1000" height="140" role="img" aria-label="Tanda tangan D A T Z dengan tulisan stay curious">
+  <style>
+    .sans { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .ink { fill: #eeede7; }
+    .mut { fill: #94978d; }
+    .acc { fill: #ff6a45; }
+
+    .rise { animation: rise 900ms cubic-bezier(.2,.65,.3,1) 1 both; }
+    .r2 { animation-delay: 90ms; }
+    .r3 { animation-delay: 180ms; }
+    .r4 { animation-delay: 270ms; }
+    .r5 { animation-delay: 420ms; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    .draw { animation: draw 1100ms cubic-bezier(.2,.65,.3,1) 480ms both; }
+    @keyframes draw { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
+
+    .spin { animation: spin 9000ms linear infinite; transform-origin: 0 0; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .caret { animation: blink 1100ms steps(1, end) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .r2, .r3, .r4, .r5, .draw, .spin, .caret {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+
+  <g class="mono mut" font-size="12" letter-spacing="2.4" opacity=".8">
+    <text x="0" y="24">TANDA TANGAN</text>
+  </g>
+
+  <g class="sans ink" font-size="84" font-weight="700">
+    <text class="rise" x="0" y="104">D</text>
+    <text class="rise r2" x="72" y="104">A</text>
+    <text class="rise r3" x="146" y="104">T</text>
+    <text class="rise r4" x="210" y="104">Z</text>
+  </g>
+  <path class="draw" d="M0 122 H300" stroke="#ff6a45" stroke-width="3" fill="none" stroke-dasharray="300"/>
+  <text class="rise r5 acc" x="272" y="104" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="84" font-weight="700">.</text>
+
+  <g transform="translate(275 100) rotate(-18) scale(1 .34)">
+    <g class="spin">
+      <g transform="translate(30 0) scale(1 2.94)"><circle class="acc" r="3"/></g>
+    </g>
+    <ellipse rx="30" ry="1" fill="none" stroke="#ff6a45" stroke-width="1.2" opacity=".6"/>
+  </g>
+
+  <g class="mono mut" font-size="13" letter-spacing="2">
+    <text class="rise r5" x="980" y="98" text-anchor="end">STAY CURIOUS.</text>
+  </g>
+  <rect class="acc caret" x="986" y="86" width="4" height="14"/>
+</svg>

@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" width="1000" height="260" role="img" aria-label="Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" role="img" aria-label="Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri">
   <title>Ahmad Roziqin — D A T Z</title>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff6a45" stop-opacity=".5"/>
+      <stop offset=".5" stop-color="#ff6a45" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ff6a45" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+    </filter>
+  </defs>
   <style>
     .bg { fill: #191b18; }
     .ink { fill: #eeede7; }
@@ -18,82 +29,115 @@
     .rise-3 { animation-delay: 300ms; }
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
-    .spin { animation: spin 18s linear infinite; transform-origin: 0 0; }
+    .draw { animation: draw 1600ms cubic-bezier(.2,.65,.3,1) 1 both; }
+    @keyframes draw { from { stroke-dashoffset: 190; } to { stroke-dashoffset: 0; } }
+
+    .mesh { animation: turn 64s linear infinite; transform-origin: 110px 150px; }
+    @keyframes turn { to { transform: rotate(360deg); } }
+
+    .orbit { animation: spin 18s linear infinite; transform-origin: 0 0; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    .breathe { animation: breathe 5200ms ease-in-out infinite alternate; transform-origin: 110px 130px; }
-    @keyframes breathe { from { transform: scale(.94); } to { transform: scale(1.06); } }
+    .orbit-back { animation: spin-back 27s linear infinite; transform-origin: 0 0; }
+    @keyframes spin-back { to { transform: rotate(-360deg); } }
+
+    .breathe { animation: breathe 5200ms ease-in-out infinite alternate; transform-origin: 110px 150px; }
+    @keyframes breathe { from { transform: scale(.955); } to { transform: scale(1.045); } }
+
+    .pulse { animation: pulse 5200ms ease-in-out infinite alternate; }
+    @keyframes pulse { from { opacity: .3; } to { opacity: .78; } }
 
     .dash { stroke-dasharray: 6 10; animation: dash 9000ms linear infinite; }
     @keyframes dash { to { stroke-dashoffset: -320; } }
+
+    .slide { animation: slide 9000ms cubic-bezier(.45,0,.55,1) infinite alternate; }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(560px); } }
 
     .caret { animation: blink 1100ms steps(1, end) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
 
     @media (prefers-reduced-motion: reduce) {
-      .sweep, .rise, .rise-2, .rise-3, .spin, .breathe, .dash, .caret {
+      .sweep, .rise, .rise-2, .rise-3, .draw, .mesh, .orbit, .orbit-back,
+      .breathe, .pulse, .dash, .slide, .caret {
         animation: none !important;
         opacity: 1;
         transform: none;
+        stroke-dashoffset: 0;
       }
+      .pulse { opacity: .5; }
     }
   </style>
 
-  <rect class="bg" width="1000" height="260"/>
+  <rect class="bg" width="1000" height="300"/>
+  <rect width="1000" height="300" filter="url(#grain)" opacity=".045"/>
 
   <g class="faint" stroke-width="1">
     <path class="dash" d="M0 12 H1000"/>
-    <path class="dash" d="M0 248 H1000"/>
+    <path class="dash" d="M0 288 H1000"/>
   </g>
   <g class="line" stroke-width="1">
     <path d="M20 24 V40 M20 24 H36"/>
-    <path d="M980 236 V220 M980 236 H964"/>
+    <path d="M980 276 V260 M980 276 H964"/>
   </g>
 
   <g class="breathe">
-    <g class="line" stroke-width="1" opacity=".5">
-      <circle cx="110" cy="130" r="52"/>
-      <ellipse cx="110" cy="130" rx="52" ry="19"/>
-      <ellipse cx="110" cy="130" rx="19" ry="52"/>
-      <ellipse cx="110" cy="130" rx="44" ry="38" transform="rotate(-24 110 130)"/>
+    <circle class="pulse" cx="110" cy="150" r="88" fill="url(#halo)"/>
+    <g class="mesh line" stroke-width="1" opacity=".4">
+      <circle cx="110" cy="150" r="52"/>
+      <ellipse cx="110" cy="150" rx="52" ry="19"/>
+      <ellipse cx="110" cy="150" rx="19" ry="52"/>
+      <ellipse cx="110" cy="150" rx="44" ry="38" transform="rotate(-24 110 150)"/>
     </g>
-    <g transform="translate(110 130) rotate(-23) scale(1 .34)">
-      <g class="spin">
-        <circle cx="72" cy="0" r="0" fill="none"/>
-        <g transform="translate(72 0) scale(1 2.94)">
-          <circle class="acc" r="4"/>
-        </g>
+    <g transform="translate(110 150) rotate(-23) scale(1 .34)">
+      <g class="orbit">
+        <g transform="translate(72 0) scale(1 2.94)"><circle class="acc" r="4"/></g>
       </g>
       <ellipse rx="72" ry="1" fill="none" stroke="#ff6a45" stroke-width="1.4" opacity=".75"/>
     </g>
+    <g transform="translate(110 150) rotate(31) scale(1 .26)">
+      <g class="orbit-back">
+        <g transform="translate(-62 0) scale(1 3.85)"><circle class="mut" r="2.6"/></g>
+      </g>
+      <ellipse rx="62" ry="1" fill="none" stroke="#94978d" stroke-width="1" opacity=".45"/>
+    </g>
     <g class="ink" opacity=".55">
-      <circle cx="110" cy="130" r="2.2"/>
-      <circle cx="74" cy="98" r="1.6"/>
-      <circle cx="146" cy="158" r="1.6"/>
+      <circle cx="110" cy="150" r="2.2"/>
+      <circle cx="74" cy="118" r="1.6"/>
+      <circle cx="146" cy="182" r="1.6"/>
     </g>
   </g>
 
+  <path class="line draw" stroke-width="1" opacity=".35" d="M210 60 V240" stroke-dasharray="190"/>
+
   <g class="mono mut" font-size="15" letter-spacing="2.4">
-    <text class="rise" x="228" y="72">A PERSONAL FIELD NOTES / 2026</text>
+    <text class="rise" x="228" y="74">A PERSONAL FIELD NOTES / 2026</text>
   </g>
+  <g class="mono" font-size="13" letter-spacing="1.6" fill="#94978d">
+    <text x="980" y="74" text-anchor="end">ziqintzy.my.id</text>
+  </g>
+  <rect class="acc caret" x="986" y="64" width="4" height="12"/>
 
   <g class="sans ink">
-    <text class="rise rise-2" x="226" y="142" font-size="62" font-weight="700" letter-spacing="-2.6">AHMAD ROZIQIN</text>
+    <text class="rise rise-2" x="226" y="150" font-size="62" font-weight="700" letter-spacing="-2.6">AHMAD ROZIQIN</text>
   </g>
-  <rect class="acc sweep" x="228" y="156" width="470" height="3"/>
+  <rect class="acc sweep" x="228" y="164" width="470" height="3"/>
 
   <g class="mono" font-size="17">
-    <text class="rise rise-3" x="228" y="192" fill="#ff8759" letter-spacing="1.6">ALIAS / D A T Z</text>
-    <text class="rise rise-3" x="424" y="192" fill="#94978d">·</text>
-    <text class="rise rise-3" x="452" y="192" fill="#94978d" letter-spacing="0">Mahasiswa Teknik Informatika, FTIK UNP Kediri</text>
+    <text class="rise rise-3" x="228" y="204" fill="#ff8759" letter-spacing="1.6">ALIAS / D A T Z</text>
+    <text class="rise rise-3" x="424" y="204" fill="#94978d">·</text>
+    <text class="rise rise-3" x="452" y="204" fill="#94978d">Mahasiswa Teknik Informatika, FTIK UNP Kediri</text>
   </g>
 
   <g class="mono mut" font-size="13" letter-spacing="1.8">
-    <text x="228" y="222">WEB SECURITY · PYTHON · HAND TRACKING</text>
+    <text x="228" y="236">WEB SECURITY · PYTHON · HAND TRACKING</text>
+  </g>
+  <g class="mono mut" font-size="12" letter-spacing="1.2" opacity=".8">
+    <text x="980" y="236" text-anchor="end">7.82° S / 112.03° E</text>
   </g>
 
-  <g class="mono" font-size="13" letter-spacing="1.6" fill="#94978d">
-    <text x="980" y="222" text-anchor="end">ziqintzy.my.id</text>
+  <g class="faint" stroke-width="1">
+    <path d="M228 272 H820"/>
+    <path d="M228 266 V278 M327 268 V276 M426 268 V276 M525 268 V276 M624 268 V276 M723 268 V276 M820 266 V278"/>
   </g>
-  <rect class="acc caret" x="986" y="212" width="4" height="12"/>
+  <g class="slide"><rect class="acc" x="228" y="268" width="26" height="8"/></g>
 </svg>

@@ -46,3 +46,9 @@ Deskripsi dan topic tiap repo sedang saya rapikan supaya jelas fungsi dan status
 Profil ini sengaja **tidak** memakai badge statistik, contribution streak, atau angka bahasa. Angka-angka itu mudah dipasang dan hampir tidak memberi informasi. Yang bisa kamu nilai di sini cuma kode yang benar-benar saya kerjakan dan tautan yang benar-benar hidup.
 
 Kalau kamu dari FTIK UNP Kediri dan butuh informasi kelas, portalnya di atas. Kalau mau ngobrol soal keamanan aplikasi atau Python, sapa lewat Instagram.
+
+![](assets/divider.svg#gh-light-mode-only)
+![](assets/divider-dark.svg#gh-dark-mode-only)
+
+![Tanda tangan D A T Z dengan tulisan stay curious](assets/signature.svg#gh-light-mode-only)
+![Tanda tangan D A T Z dengan tulisan stay curious](assets/signature-dark.svg#gh-dark-mode-only)
