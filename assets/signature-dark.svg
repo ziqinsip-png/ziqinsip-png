@@ -5,25 +5,30 @@
     .ink { fill: #eeede7; }
     .mut { fill: #94978d; }
     .acc { fill: #ff6a45; }
+    .rule { fill: #41443d; }
 
-    .rise { animation: rise 900ms cubic-bezier(.2,.65,.3,1) 1 both; }
+    .rise { animation-name: rise; animation-duration: 900ms; animation-timing-function: cubic-bezier(.2,.65,.3,1); animation-fill-mode: both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     .r2 { animation-delay: 90ms; }
     .r3 { animation-delay: 180ms; }
     .r4 { animation-delay: 270ms; }
     .r5 { animation-delay: 420ms; }
-    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .r6 { animation-delay: 620ms; }
 
     .draw { animation: draw 1100ms cubic-bezier(.2,.65,.3,1) 480ms both; }
     @keyframes draw { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
 
-    .spin { animation: spin 9000ms linear infinite; transform-origin: 0 0; }
+    .sweep { transform-box: fill-box; transform-origin: left center; animation: sweep 1400ms cubic-bezier(.2,.65,.3,1) 620ms both; }
+    @keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    .spin { animation: spin 8000ms linear infinite; transform-origin: 326px 96px; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .caret { animation: blink 1100ms steps(1, end) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
 
     @media (prefers-reduced-motion: reduce) {
-      .rise, .r2, .r3, .r4, .r5, .draw, .spin, .caret {
+      .rise, .draw, .sweep, .spin, .caret {
         animation: none !important;
         opacity: 1;
         transform: none;
@@ -32,28 +37,29 @@
     }
   </style>
 
-  <g class="mono mut" font-size="12" letter-spacing="2.4" opacity=".8">
-    <text x="0" y="24">TANDA TANGAN</text>
+  <rect class="acc" x="40" y="12" width="7" height="10"/>
+  <g class="mono mut rise" font-size="12" letter-spacing="2.6">
+    <text x="58" y="22">TANDA TANGAN</text>
   </g>
 
   <g class="sans ink" font-size="84" font-weight="700">
-    <text class="rise" x="0" y="104">D</text>
-    <text class="rise r2" x="72" y="104">A</text>
-    <text class="rise r3" x="146" y="104">T</text>
-    <text class="rise r4" x="210" y="104">Z</text>
+    <text class="rise" x="40" y="104">D</text>
+    <text class="rise r2" x="112" y="104">A</text>
+    <text class="rise r3" x="186" y="104">T</text>
+    <text class="rise r4" x="250" y="104">Z</text>
+    <text class="rise r5 acc" x="312" y="104">.</text>
   </g>
-  <path class="draw" d="M0 122 H300" stroke="#ff6a45" stroke-width="3" fill="none" stroke-dasharray="300"/>
-  <text class="rise r5 acc" x="272" y="104" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="84" font-weight="700">.</text>
+  <path class="draw" d="M40 122 H340" stroke="#ff6a45" stroke-width="3" fill="none" stroke-dasharray="300"/>
 
-  <g transform="translate(275 100) rotate(-18) scale(1 .34)">
-    <g class="spin">
-      <g transform="translate(30 0) scale(1 2.94)"><circle class="acc" r="3"/></g>
-    </g>
-    <ellipse rx="30" ry="1" fill="none" stroke="#ff6a45" stroke-width="1.2" opacity=".6"/>
+  <g class="rise r6">
+    <circle cx="326" cy="96" r="36" fill="none" stroke="#ff6a45" stroke-width="1.2" opacity=".45"/>
+    <g class="spin"><circle class="acc" cx="326" cy="60" r="3.4"/></g>
   </g>
 
-  <g class="mono mut" font-size="13" letter-spacing="2">
-    <text class="rise r5" x="980" y="98" text-anchor="end">STAY CURIOUS.</text>
+  <rect class="rule sweep" x="380" y="97" width="418" height="1"/>
+
+  <g class="mono mut rise r6" font-size="15" letter-spacing="2.4">
+    <text x="960" y="104" text-anchor="end">STAY CURIOUS.</text>
   </g>
-  <rect class="acc caret" x="986" y="86" width="4" height="14"/>
+  <rect class="acc caret" x="966" y="92" width="4" height="14"/>
 </svg>

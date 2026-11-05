@@ -2,8 +2,8 @@
   <defs>
     <linearGradient id="trail" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ff6a45" stop-opacity="0"/>
-      <stop offset=".6" stop-color="#ff6a45" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#ff6a45" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#ff6a45" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#ff6a45" stop-opacity=".92"/>
     </linearGradient>
   </defs>
   <style>
@@ -11,67 +11,63 @@
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
     .ink { fill: #eeede7; }
     .mut { fill: #94978d; }
-    .track { stroke: #41443d; stroke-width: 1; }
-    .tick { fill: #ff6a45; }
-    .num { fill: #94978d; opacity: .75; }
+    .acc { fill: #ff6a45; }
+    .rule { fill: #41443d; }
 
-    .glide { animation: glide 4200ms cubic-bezier(.5,0,.5,1) infinite alternate; }
-    .glide-2 { animation-duration: 5600ms; animation-delay: -1400ms; }
-    .glide-3 { animation-duration: 3400ms; animation-delay: -2100ms; }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(254px); } }
+    .rise { animation-name: rise; animation-duration: 800ms; animation-timing-function: cubic-bezier(.2,.65,.3,1); animation-fill-mode: both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .r1 { animation-delay: 100ms; }
+    .r2 { animation-delay: 220ms; }
+    .r3 { animation-delay: 340ms; }
 
-    .fill { transform-box: fill-box; transform-origin: left center; animation: grow 4200ms cubic-bezier(.5,0,.5,1) infinite alternate; }
-    .fill-2 { animation-duration: 5600ms; animation-delay: -1400ms; }
-    .fill-3 { animation-duration: 3400ms; animation-delay: -2100ms; }
-    @keyframes grow { from { transform: scaleX(.04); } to { transform: scaleX(1); } }
+    .sweep { transform-box: fill-box; transform-origin: left center; animation: sweep 1100ms cubic-bezier(.2,.65,.3,1) 300ms both; }
+    @keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-    .caret { animation: blink 1100ms steps(1, end) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+    .glide { animation-name: glide; animation-duration: 4200ms; animation-timing-function: cubic-bezier(.5,0,.5,1); animation-iteration-count: infinite; animation-direction: alternate; }
+    .grow { transform-box: fill-box; transform-origin: left center; animation-name: grow; animation-duration: 4200ms; animation-timing-function: cubic-bezier(.5,0,.5,1); animation-iteration-count: infinite; animation-direction: alternate; }
+    .g2 { animation-duration: 5600ms; animation-delay: -1400ms; }
+    .g3 { animation-duration: 3400ms; animation-delay: -2100ms; }
+    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(873px); } }
+    @keyframes grow { from { transform: scaleX(.03); } to { transform: scaleX(1); } }
 
     @media (prefers-reduced-motion: reduce) {
-      .glide, .glide-2, .glide-3 { animation: none !important; transform: translateX(127px); }
-      .fill, .fill-2, .fill-3 { animation: none !important; transform: scaleX(.52); }
-      .caret { animation: none !important; opacity: 1; }
+      .rise, .r1, .r2, .r3 { animation: none !important; opacity: 1; transform: none; }
+      .sweep { animation: none !important; transform: none; }
+      .glide { animation: none !important; transform: translateX(436px); }
+      .grow { animation: none !important; transform: scaleX(.5); }
     }
   </style>
 
-  <g class="mono mut" font-size="13" letter-spacing="2.4">
-    <text x="0" y="16">03 / FOKUS YANG SEDANG KUKERJAKAN</text>
+  <rect class="acc" x="40" y="5" width="8" height="11"/>
+  <g class="mono mut rise" font-size="13" letter-spacing="2.4">
+    <text x="60" y="16">03 / FOKUS YANG SEDANG KUKERJAKAN</text>
   </g>
-  <rect class="caret tick" x="340" y="5" width="8" height="13" opacity=".85"/>
+  <rect class="rule sweep" x="428" y="10" width="532" height="1"/>
 
-  <g class="sans ink" font-size="25" letter-spacing="-.6">
-    <text x="0" y="66">Keamanan aplikasi web</text>
-    <text x="0" y="122">Python &amp; web development</text>
-    <text x="0" y="178">Hand tracking</text>
-  </g>
-
-  <g class="mono mut" font-size="14">
-    <text x="300" y="66">— memahami di mana risiko muncul</text>
-    <text x="340" y="122">— membangun, bukan cuma memakai</text>
-    <text x="212" y="178">— menggerakkan layar tanpa menyentuhnya</text>
+  <g class="rise r1">
+    <text class="mono acc" x="40" y="64" font-size="14" letter-spacing="1">01</text>
+    <text class="sans ink" x="84" y="64" font-size="24" letter-spacing="-.4">Keamanan aplikasi web</text>
+    <text class="mono mut" x="960" y="62" font-size="14" text-anchor="end">merakit engine-nya sendiri</text>
+    <rect class="rule" x="84" y="82" width="876" height="1"/>
+    <g class="grow"><rect x="84" y="79" width="876" height="7" fill="url(#trail)"/></g>
+    <g class="glide"><rect class="acc" x="84" y="73" width="3" height="19"/></g>
   </g>
 
-  <g class="mono num" font-size="12" letter-spacing="1.4" text-anchor="end">
-    <text x="980" y="66">001</text>
-    <text x="980" y="122">002</text>
-    <text x="980" y="178">003</text>
+  <g class="rise r2">
+    <text class="mono acc" x="40" y="122" font-size="14" letter-spacing="1">02</text>
+    <text class="sans ink" x="84" y="122" font-size="24" letter-spacing="-.4">Python &amp; web development</text>
+    <text class="mono mut" x="960" y="120" font-size="14" text-anchor="end">membangun, bukan cuma memakai</text>
+    <rect class="rule" x="84" y="140" width="876" height="1"/>
+    <g class="grow g2"><rect x="84" y="137" width="876" height="7" fill="url(#trail)"/></g>
+    <g class="glide g2"><rect class="acc" x="84" y="131" width="3" height="19"/></g>
   </g>
 
-  <g class="track">
-    <line x1="650" y1="82" x2="930" y2="82"/>
-    <line x1="650" y1="138" x2="930" y2="138"/>
-    <line x1="650" y1="194" x2="930" y2="194"/>
+  <g class="rise r3">
+    <text class="mono acc" x="40" y="180" font-size="14" letter-spacing="1">03</text>
+    <text class="sans ink" x="84" y="180" font-size="24" letter-spacing="-.4">Hand tracking</text>
+    <text class="mono mut" x="960" y="178" font-size="14" text-anchor="end">menyentuh layar tanpa menyentuhnya</text>
+    <rect class="rule" x="84" y="198" width="876" height="1"/>
+    <g class="grow g3"><rect x="84" y="195" width="876" height="7" fill="url(#trail)"/></g>
+    <g class="glide g3"><rect class="acc" x="84" y="189" width="3" height="19"/></g>
   </g>
-  <g class="track" stroke-width="1" opacity=".9">
-    <path d="M930 76 V88 M930 132 V144 M930 188 V200"/>
-  </g>
-
-  <g class="fill"><rect x="650" y="79" width="280" height="6" fill="url(#trail)"/></g>
-  <g class="fill fill-2"><rect x="650" y="135" width="280" height="6" fill="url(#trail)"/></g>
-  <g class="fill fill-3"><rect x="650" y="191" width="280" height="6" fill="url(#trail)"/></g>
-
-  <g class="glide"><rect class="tick" x="650" y="78" width="26" height="8"/></g>
-  <g class="glide glide-2"><rect class="tick" x="650" y="134" width="26" height="8"/></g>
-  <g class="glide glide-3"><rect class="tick" x="650" y="190" width="26" height="8"/></g>
 </svg>
