@@ -15,7 +15,7 @@
       <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch" result="n"/>
       <feColorMatrix in="n" type="saturate" values="0"/>
     </filter>
-    <clipPath id="rail"><rect x="40" y="252" width="756" height="40"/></clipPath>
+    <clipPath id="rail"><rect x="40" y="252" width="700" height="40"/></clipPath>
   </defs>
   <style>
     .bg { fill: #eeede7; }
