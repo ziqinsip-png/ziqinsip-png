@@ -27,6 +27,7 @@ Saya mahasiswa Teknik Informatika di Fakultas Teknik dan Ilmu Komputer (FTIK), U
 | Skrip setup server | [rdp1](https://github.com/ziqinsip-png/rdp1) — otomatisasi instalasi panel game server di Linux. |
 | TikTok | [@ziqin1704](https://www.tiktok.com/@ziqin1704) |
 | Instagram | [@ziqinnn___](https://www.instagram.com/ziqinnn___/) |
+| LinkedIn | [in/ahmad-roziqin](https://www.linkedin.com/in/ahmad-roziqin) — profil profesional, terbuka untuk kerja jarak jauh. |
 
 ## Cara membaca repository saya
 
