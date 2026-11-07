@@ -22,13 +22,20 @@
     @keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
     .spin { animation: spin 8000ms linear infinite; transform-origin: 326px 96px; }
+    .spin-b { animation: spinb 13000ms linear infinite; transform-origin: 326px 96px; }
     @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinb { to { transform: rotate(-360deg); } }
 
     .caret { animation: blink 1100ms steps(1, end) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
 
+    .tw { animation: tw 3600ms ease-in-out infinite alternate; }
+    .tw2 { animation-duration: 4700ms; animation-delay: -1300ms; }
+    .tw3 { animation-duration: 2900ms; animation-delay: -2200ms; }
+    @keyframes tw { from { opacity: .15; transform: translateY(0); } 50% { opacity: .75; } to { opacity: .15; transform: translateY(-8px); } }
+
     @media (prefers-reduced-motion: reduce) {
-      .rise, .draw, .sweep, .spin, .caret {
+      .rise, .draw, .sweep, .spin, .spin-b, .caret, .tw, .tw2, .tw3 {
         animation: none !important;
         opacity: 1;
         transform: none;
@@ -53,7 +60,17 @@
 
   <g class="rise r6">
     <circle cx="326" cy="96" r="36" fill="none" stroke="#e65132" stroke-width="1.2" opacity=".45"/>
-    <g class="spin"><circle class="acc" cx="326" cy="60" r="3.4"/></g>
+    <circle cx="326" cy="96" r="44" fill="none" stroke="#2f6bff" stroke-width="1" stroke-dasharray="2 8" opacity=".4"/>
+    <g class="spin"><circle cx="326" cy="60" r="3.4" fill="#e65132"/></g>
+    <g class="spin-b"><circle cx="326" cy="52" r="2.4" fill="#2f6bff" opacity=".85"/></g>
+  </g>
+
+  <g>
+    <circle class="tw" cx="452" cy="40" r="2" fill="#e65132"/>
+    <circle class="tw tw2" cx="596" cy="58" r="2.2" fill="#2f6bff"/>
+    <circle class="tw tw3" cx="724" cy="34" r="1.8" fill="#3f8f0f"/>
+    <circle class="tw tw2" cx="838" cy="66" r="2" fill="#c77400"/>
+    <circle class="tw tw3" cx="520" cy="116" r="1.6" fill="#3f8f0f"/>
   </g>
 
   <rect class="rule sweep" x="380" y="97" width="418" height="1"/>

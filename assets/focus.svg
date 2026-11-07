@@ -5,6 +5,16 @@
       <stop offset=".55" stop-color="#e65132" stop-opacity=".18"/>
       <stop offset="1" stop-color="#e65132" stop-opacity=".92"/>
     </linearGradient>
+    <linearGradient id="trail-b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2f6bff" stop-opacity="0"/>
+      <stop offset=".55" stop-color="#2f6bff" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#2f6bff" stop-opacity=".92"/>
+    </linearGradient>
+    <linearGradient id="trail-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3f8f0f" stop-opacity="0"/>
+      <stop offset=".55" stop-color="#3f8f0f" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#3f8f0f" stop-opacity=".92"/>
+    </linearGradient>
   </defs>
   <style>
     .sans { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -12,6 +22,8 @@
     .ink { fill: #191b18; }
     .mut { fill: #62645b; }
     .acc { fill: #e65132; }
+    .blu { fill: #2f6bff; }
+    .grn { fill: #3f8f0f; }
     .rule { fill: #c9c9be; }
 
     .rise { animation-name: rise; animation-duration: 800ms; animation-timing-function: cubic-bezier(.2,.65,.3,1); animation-fill-mode: both; }
@@ -27,14 +39,27 @@
     .grow { transform-box: fill-box; transform-origin: left center; animation-name: grow; animation-duration: 4200ms; animation-timing-function: cubic-bezier(.5,0,.5,1); animation-iteration-count: infinite; animation-direction: alternate; }
     .g2 { animation-duration: 5600ms; animation-delay: -1400ms; }
     .g3 { animation-duration: 3400ms; animation-delay: -2100ms; }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(873px); } }
+    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(847px); } }
     @keyframes grow { from { transform: scaleX(.03); } to { transform: scaleX(1); } }
+
+    .ico { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 1300ms cubic-bezier(.2,.65,.3,1) both; }
+    .ico-acc { stroke: #e65132; animation-delay: 480ms; }
+    .ico-blu { stroke: #2f6bff; animation-delay: 620ms; }
+    .ico-grn { stroke: #3f8f0f; animation-delay: 760ms; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    .throb { animation: throb 2600ms ease-in-out infinite alternate; }
+    .th2 { animation-duration: 3400ms; animation-delay: -900ms; }
+    .th3 { animation-duration: 2900ms; animation-delay: -1700ms; }
+    @keyframes throb { from { opacity: .3; } to { opacity: 1; } }
 
     @media (prefers-reduced-motion: reduce) {
       .rise, .r1, .r2, .r3 { animation: none !important; opacity: 1; transform: none; }
       .sweep { animation: none !important; transform: none; }
-      .glide { animation: none !important; transform: translateX(436px); }
+      .glide { animation: none !important; transform: translateX(423px); }
       .grow { animation: none !important; transform: scaleX(.5); }
+      .ico { animation: none !important; stroke-dashoffset: 0; }
+      .throb, .th2, .th3 { animation: none !important; opacity: .85; }
     }
   </style>
 
@@ -46,28 +71,35 @@
 
   <g class="rise r1">
     <text class="mono acc" x="40" y="64" font-size="14" letter-spacing="1">01</text>
-    <text class="sans ink" x="84" y="64" font-size="24" letter-spacing="-.4">Keamanan aplikasi web</text>
+    <path class="ico ico-acc" pathLength="100" d="M73 45 L82 48.5 V55 C82 61.5 78 65.5 73 67.5 C68 65.5 64 61.5 64 55 V48.5 Z M69 55.5 L72 58.5 L77.5 52.5"/>
+    <text class="sans ink" x="110" y="64" font-size="24" letter-spacing="-.4">Keamanan aplikasi web</text>
     <text class="mono mut" x="960" y="62" font-size="14" text-anchor="end">merakit engine-nya sendiri</text>
-    <rect class="rule" x="84" y="82" width="876" height="1"/>
-    <g class="grow"><rect x="84" y="79" width="876" height="7" fill="url(#trail)"/></g>
-    <g class="glide"><rect class="acc" x="84" y="73" width="3" height="19"/></g>
+    <rect class="rule" x="110" y="82" width="850" height="1"/>
+    <g class="grow"><rect x="110" y="79" width="850" height="7" fill="url(#trail)"/></g>
+    <g class="glide"><rect class="acc" x="110" y="73" width="3" height="19"/></g>
+    <circle class="acc throb" cx="98" cy="59" r="2.4"/>
   </g>
 
   <g class="rise r2">
-    <text class="mono acc" x="40" y="122" font-size="14" letter-spacing="1">02</text>
-    <text class="sans ink" x="84" y="122" font-size="24" letter-spacing="-.4">Python &amp; web development</text>
+    <text class="mono blu" x="40" y="122" font-size="14" letter-spacing="1">02</text>
+    <path class="ico ico-blu" pathLength="100" d="M68 105 L61 112 L68 119 M78 105 L85 112 L78 119 M74.5 103 L71.5 121"/>
+    <text class="sans ink" x="110" y="122" font-size="24" letter-spacing="-.4">Python &amp; web development</text>
     <text class="mono mut" x="960" y="120" font-size="14" text-anchor="end">membangun, bukan cuma memakai</text>
-    <rect class="rule" x="84" y="140" width="876" height="1"/>
-    <g class="grow g2"><rect x="84" y="137" width="876" height="7" fill="url(#trail)"/></g>
-    <g class="glide g2"><rect class="acc" x="84" y="131" width="3" height="19"/></g>
+    <rect class="rule" x="110" y="140" width="850" height="1"/>
+    <g class="grow g2"><rect x="110" y="137" width="850" height="7" fill="url(#trail-b)"/></g>
+    <g class="glide g2"><rect class="blu" x="110" y="131" width="3" height="19"/></g>
+    <circle class="blu throb th2" cx="98" cy="117" r="2.4"/>
   </g>
 
   <g class="rise r3">
-    <text class="mono acc" x="40" y="180" font-size="14" letter-spacing="1">03</text>
-    <text class="sans ink" x="84" y="180" font-size="24" letter-spacing="-.4">Hand tracking</text>
+    <text class="mono grn" x="40" y="180" font-size="14" letter-spacing="1">03</text>
+    <path class="ico ico-grn" pathLength="100" d="M67 165 A8.5 8.5 0 0 1 80 165 M62.5 160.5 A15 15 0 0 1 84.5 160.5"/>
+    <circle class="grn" cx="73" cy="172" r="2.6"/>
+    <text class="sans ink" x="110" y="180" font-size="24" letter-spacing="-.4">Hand tracking</text>
     <text class="mono mut" x="960" y="178" font-size="14" text-anchor="end">menyentuh layar tanpa menyentuhnya</text>
-    <rect class="rule" x="84" y="198" width="876" height="1"/>
-    <g class="grow g3"><rect x="84" y="195" width="876" height="7" fill="url(#trail)"/></g>
-    <g class="glide g3"><rect class="acc" x="84" y="189" width="3" height="19"/></g>
+    <rect class="rule" x="110" y="198" width="850" height="1"/>
+    <g class="grow g3"><rect x="110" y="195" width="850" height="7" fill="url(#trail-g)"/></g>
+    <g class="glide g3"><rect class="grn" x="110" y="189" width="3" height="19"/></g>
+    <circle class="grn throb th3" cx="98" cy="175" r="2.4"/>
   </g>
 </svg>

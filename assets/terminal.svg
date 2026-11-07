@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 238" width="1000" height="238" role="img" aria-label="Terminal: webwarden memindai keamanan web, datz konsol lab keamanan lokal, netwarden penjaga jaringan lokal">
+  <title>Alat yang saya bangun</title>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .card { fill: #f7f6f1; stroke: #c9c9be; stroke-width: 1; }
+    .cover { fill: #f7f6f1; }
+    .ink { fill: #191b18; }
+    .mut { fill: #62645b; }
+    .acc { fill: #e65132; }
+    .blu { fill: #2f6bff; }
+    .grn { fill: #3f8f0f; }
+    .amb { fill: #c77400; }
+    .hair { stroke: #c9c9be; stroke-width: 1; }
+
+    .loop { animation: loopfade 18000ms linear infinite; }
+    @keyframes loopfade { 0%, 90% { opacity: 1; } 94%, 96% { opacity: 0; } 100% { opacity: 1; } }
+
+    .t1, .t2, .t3 { transform-box: fill-box; transform-origin: right center; }
+    .t1 { animation: t1 18000ms linear infinite; }
+    @keyframes t1 {
+      0%, 6% { transform: scaleX(1); animation-timing-function: steps(29, end); }
+      18% { transform: scaleX(0); }
+      94% { transform: scaleX(0); }
+      95%, 100% { transform: scaleX(1); }
+    }
+    .t2 { animation: t2 18000ms linear infinite; }
+    @keyframes t2 {
+      0%, 26% { transform: scaleX(1); animation-timing-function: steps(6, end); }
+      36% { transform: scaleX(0); }
+      94% { transform: scaleX(0); }
+      95%, 100% { transform: scaleX(1); }
+    }
+    .t3 { animation: t3 18000ms linear infinite; }
+    @keyframes t3 {
+      0%, 44% { transform: scaleX(1); animation-timing-function: steps(11, end); }
+      56% { transform: scaleX(0); }
+      94% { transform: scaleX(0); }
+      95%, 100% { transform: scaleX(1); }
+    }
+
+    .c1 { animation: c1 18000ms linear infinite; }
+    @keyframes c1 { 0%, 18% { opacity: 0; } 22%, 90% { opacity: 1; } 94%, 100% { opacity: 0; } }
+    .c2 { animation: c2 18000ms linear infinite; }
+    @keyframes c2 { 0%, 36% { opacity: 0; } 40%, 90% { opacity: 1; } 94%, 100% { opacity: 0; } }
+    .c3 { animation: c3 18000ms linear infinite; }
+    @keyframes c3 { 0%, 56% { opacity: 0; } 60%, 90% { opacity: 1; } 94%, 100% { opacity: 0; } }
+
+    .caret { animation: blink 1100ms steps(1, end) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .throb { animation: throb 3200ms ease-in-out infinite alternate; }
+    .th2 { animation-delay: -1100ms; }
+    .th3 { animation-delay: -2200ms; }
+    @keyframes throb { from { opacity: .45; } to { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .loop { animation: none !important; opacity: 1; }
+      .t1, .t2, .t3 { animation: none !important; transform: scaleX(0); }
+      .c1, .c2, .c3 { animation: none !important; opacity: 1; }
+      .caret, .throb, .th2, .th3 { animation: none !important; opacity: 1; }
+    }
+  </style>
+
+  <rect class="card" x="0.5" y="0.5" width="999" height="237" rx="10"/>
+  <circle class="acc throb" cx="26" cy="18" r="4.5"/>
+  <circle class="amb throb th2" cx="44" cy="18" r="4.5"/>
+  <circle class="grn throb th3" cx="62" cy="18" r="4.5"/>
+  <text class="mono mut" x="84" y="23" font-size="13" letter-spacing="1.4">datz@kediri — alat yang saya bangun</text>
+  <text class="mono mut" x="972" y="23" font-size="12" letter-spacing="1.2" text-anchor="end">bash — 80×24</text>
+  <line class="hair" x1="1" y1="35" x2="999" y2="35"/>
+
+  <g class="loop mono" font-size="15">
+    <text x="28" y="64"><tspan class="acc">$ </tspan><tspan class="ink">webwarden --full --lang id</tspan></text>
+    <rect class="cover t1" x="28" y="50" width="280" height="20"/>
+    <text class="mut c1" x="28" y="88"><tspan class="grn"># </tspan>pemindai keamanan web — hanya sistem milik sendiri atau berizin</text>
+
+    <text x="28" y="118"><tspan class="acc">$ </tspan><tspan class="ink">datz</tspan></text>
+    <rect class="cover t2" x="28" y="104" width="66" height="20"/>
+    <text class="mut c2" x="28" y="142"><tspan class="grn"># </tspan>konsol TUI untuk lab keamanan lokal</text>
+
+    <text x="28" y="172"><tspan class="acc">$ </tspan><tspan class="ink">netwarden</tspan></text>
+    <rect class="cover t3" x="28" y="158" width="106" height="20"/>
+    <text class="mut c3" x="28" y="196"><tspan class="grn"># </tspan>penjaga jaringan lokal — deteksi ARP spoofing dan kontrol sesi</text>
+  </g>
+
+  <text class="mono acc" x="28" y="222" font-size="15">$</text>
+  <rect class="acc caret" x="40" y="209" width="9" height="16"/>
+</svg>

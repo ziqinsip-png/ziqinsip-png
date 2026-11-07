@@ -11,11 +11,26 @@
       <stop offset=".7" stop-color="#e65132" stop-opacity=".14"/>
       <stop offset="1" stop-color="#e65132" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="underline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e65132"/>
+      <stop offset=".55" stop-color="#e65132"/>
+      <stop offset=".8" stop-color="#2f6bff"/>
+      <stop offset="1" stop-color="#3f8f0f"/>
+    </linearGradient>
+    <linearGradient id="skyline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e65132" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#2f6bff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#3f8f0f" stop-opacity="0"/>
+    </linearGradient>
     <filter id="grain" x="0" y="0" width="100%" height="100%">
       <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch" result="n"/>
       <feColorMatrix in="n" type="saturate" values="0"/>
     </filter>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
     <clipPath id="rail"><rect x="40" y="252" width="700" height="40"/></clipPath>
+    <clipPath id="frame"><rect width="1000" height="320"/></clipPath>
   </defs>
   <style>
     .bg { fill: #eeede7; }
@@ -23,6 +38,9 @@
     .mut { fill: #62645b; }
     .acc { fill: #e65132; }
     .deep { fill: #aa341e; }
+    .blu { fill: #2f6bff; }
+    .grn { fill: #3f8f0f; }
+    .amb { fill: #c77400; }
     .rule { fill: #c9c9be; }
     .hair { stroke: #c9c9be; stroke-width: 1; fill: none; }
     .ring { stroke: #c9c9be; stroke-width: 1; fill: none; }
@@ -45,6 +63,7 @@
     .turn { animation: turn 7s linear infinite; transform-origin: 862px 150px; }
     .turn-a { animation: turn 10s linear infinite; transform-origin: 862px 150px; }
     .turn-b { animation: turnb 16s linear infinite; transform-origin: 862px 150px; }
+    .turn-c { animation: turn 23s linear infinite; transform-origin: 862px 150px; }
     @keyframes turn { to { transform: rotate(360deg); } }
     @keyframes turnb { to { transform: rotate(-360deg); } }
 
@@ -53,6 +72,7 @@
 
     .pulse { animation: pulse 3200ms ease-in-out infinite alternate; }
     .pulse-2 { animation-duration: 4400ms; animation-delay: -1200ms; }
+    .pulse-3 { animation-duration: 2600ms; animation-delay: -700ms; }
     @keyframes pulse { from { opacity: .25; } to { opacity: .95; } }
 
     .dash { stroke-dasharray: 5 11; animation: dash 24000ms linear infinite; }
@@ -64,22 +84,60 @@
     .caret { animation: blink 1100ms steps(1, end) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
 
+    .aur { animation: aur 14000ms ease-in-out infinite alternate; }
+    .aur-b { animation-duration: 19000ms; animation-delay: -6000ms; }
+    @keyframes aur { from { transform: translateX(-46px); } to { transform: translateX(46px); } }
+
+    .drift { animation: drift 9000ms ease-in-out infinite alternate; }
+    .dr2 { animation-duration: 12000ms; animation-delay: -3000ms; }
+    .dr3 { animation-duration: 7500ms; animation-delay: -5000ms; }
+    .dr4 { animation-duration: 10500ms; animation-delay: -1500ms; }
+    @keyframes drift { from { transform: translateY(0); opacity: .2; } 50% { opacity: .8; } to { transform: translateY(-14px); opacity: .2; } }
+
+    .skyrun { animation: skyrun 9000ms cubic-bezier(.65,.05,.36,1) infinite; }
+    @keyframes skyrun {
+      0% { transform: translateX(-420px); opacity: 0; }
+      14% { opacity: .9; }
+      82% { opacity: .9; }
+      100% { transform: translateX(1080px); opacity: 0; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .rise, .fade, .sweep, .turn, .turn-a, .turn-b, .breathe, .pulse, .pulse-2, .dash, .rail, .caret {
+      .rise, .fade, .sweep, .turn, .turn-a, .turn-b, .turn-c, .breathe, .pulse, .pulse-2, .pulse-3, .dash, .rail, .caret, .aur, .aur-b, .drift, .dr2, .dr3, .dr4, .skyrun {
         animation: none !important;
-        opacity: 1;
         transform: none;
       }
-      .fade, .pulse, .pulse-2 { opacity: .8; }
+      .rise, .fade, .sweep { opacity: 1; }
+      .pulse, .pulse-2, .pulse-3 { opacity: .8; }
+      .drift, .dr2, .dr3, .dr4 { opacity: .5; }
+      .skyrun { opacity: 0; }
     }
   </style>
 
   <rect class="bg" width="1000" height="320"/>
+  <g clip-path="url(#frame)">
+    <ellipse class="aur" cx="290" cy="26" rx="430" ry="72" fill="#2f6bff" opacity=".10" filter="url(#soft)"/>
+    <ellipse class="aur aur-b" cx="660" cy="304" rx="400" ry="66" fill="#3f8f0f" opacity=".09" filter="url(#soft)"/>
+    <ellipse class="aur" cx="540" cy="14" rx="300" ry="52" fill="#c77400" opacity=".07" filter="url(#soft)"/>
+  </g>
   <rect width="1000" height="320" filter="url(#grain)" opacity=".05"/>
 
   <g class="hair" opacity=".85">
     <path class="dash" d="M0 13 H1000"/>
     <path class="dash" d="M0 307 H1000"/>
+  </g>
+  <g class="skyrun"><rect x="0" y="11" width="380" height="3" fill="url(#skyline)"/></g>
+
+  <g>
+    <circle class="blu drift" cx="96" cy="96" r="2.2"/>
+    <circle class="acc drift dr2" cx="210" cy="238" r="2.6"/>
+    <circle class="grn drift dr3" cx="352" cy="104" r="2"/>
+    <circle class="amb drift dr4" cx="474" cy="230" r="2.4"/>
+    <circle class="acc drift dr3" cx="598" cy="92" r="2.2"/>
+    <circle class="blu drift dr2" cx="700" cy="214" r="2"/>
+    <circle class="grn drift" cx="762" cy="66" r="1.8"/>
+    <circle class="mut drift dr4" cx="160" cy="180" r="1.8"/>
+    <circle class="amb drift dr2" cx="640" cy="160" r="1.6"/>
   </g>
 
   <g class="breathe">
@@ -92,16 +150,20 @@
       <circle class="ring" cx="862" cy="150" r="88"/>
       <circle class="ring" cx="862" cy="150" r="58"/>
       <circle class="ring" cx="862" cy="150" r="28"/>
+      <circle cx="862" cy="150" r="118" fill="none" stroke="#2f6bff" stroke-width="1" stroke-dasharray="2 9" opacity=".55"/>
       <path class="ring" d="M862 62 V238 M774 150 H950" opacity=".7"/>
     </g>
     <g class="fade d3">
       <circle class="acc" cx="862" cy="150" r="3.4"/>
       <circle class="acc pulse" cx="906" cy="112" r="3.4"/>
       <circle class="mut pulse-2" cx="826" cy="192" r="2.8"/>
+      <circle class="grn pulse-3" cx="918" cy="170" r="2.4"/>
       <circle class="acc" cx="826" cy="192" r="1.2" opacity=".5"/>
     </g>
     <g class="turn-a"><circle class="acc" cx="862" cy="62" r="3.6" opacity=".9"/></g>
     <g class="turn-b"><circle class="mut" cx="920" cy="150" r="2.8"/></g>
+    <g class="turn-c"><circle class="blu" cx="862" cy="32" r="2.6" opacity=".85"/></g>
+    <g class="turn-b"><circle class="amb" cx="862" cy="208" r="2.2" opacity=".8"/></g>
   </g>
 
   <g class="fade">
@@ -118,7 +180,7 @@
   <g class="sans ink">
     <text class="rise d1" x="38" y="156" font-size="80" font-weight="700" letter-spacing="-3.4">AHMAD ROZIQIN</text>
   </g>
-  <rect class="acc sweep" x="40" y="176" width="622" height="4"/>
+  <rect class="sweep" x="40" y="176" width="622" height="4" fill="url(#underline)"/>
 
   <g class="mono deep rise d2" font-size="17" letter-spacing="1.6">
     <text x="40" y="214">ALIAS / D A T Z</text>
@@ -130,18 +192,18 @@
   <g clip-path="url(#rail)">
     <g class="rail fade d4">
       <g font-size="14" letter-spacing="1.2" text-anchor="middle">
-        <g class="mono mut"><rect class="hair" x="40" y="260" width="172" height="28" rx="14"/><text x="126" y="279">WEB SECURITY</text></g>
-        <g class="mono mut"><rect class="hair" x="222" y="260" width="172" height="28" rx="14"/><text x="308" y="279">PYTHON</text></g>
-        <g class="mono mut"><rect class="hair" x="404" y="260" width="172" height="28" rx="14"/><text x="490" y="279">HAND TRACKING</text></g>
-        <g class="mono mut"><rect class="hair" x="586" y="260" width="172" height="28" rx="14"/><text x="672" y="279">WEB DEVELOPMENT</text></g>
-        <g class="mono mut"><rect class="hair" x="768" y="260" width="172" height="28" rx="14"/><text x="854" y="279">KEDIRI, ID</text></g>
+        <g class="mono mut"><rect class="hair" x="40" y="260" width="172" height="28" rx="14"/><circle class="acc pulse" cx="58" cy="274" r="3"/><text x="132" y="279">WEB SECURITY</text></g>
+        <g class="mono mut"><rect class="hair" x="222" y="260" width="172" height="28" rx="14"/><circle class="blu pulse-2" cx="240" cy="274" r="3"/><text x="314" y="279">PYTHON</text></g>
+        <g class="mono mut"><rect class="hair" x="404" y="260" width="172" height="28" rx="14"/><circle class="grn pulse-3" cx="422" cy="274" r="3"/><text x="496" y="279">HAND TRACKING</text></g>
+        <g class="mono mut"><rect class="hair" x="586" y="260" width="172" height="28" rx="14"/><circle class="amb pulse" cx="604" cy="274" r="3"/><text x="678" y="279">WEB DEVELOPMENT</text></g>
+        <g class="mono mut"><rect class="hair" x="768" y="260" width="172" height="28" rx="14"/><circle class="acc pulse-2" cx="786" cy="274" r="3"/><text x="860" y="279">KEDIRI, ID</text></g>
       </g>
       <g transform="translate(900)" font-size="14" letter-spacing="1.2" text-anchor="middle">
-        <g class="mono mut"><rect class="hair" x="40" y="260" width="172" height="28" rx="14"/><text x="126" y="279">WEB SECURITY</text></g>
-        <g class="mono mut"><rect class="hair" x="222" y="260" width="172" height="28" rx="14"/><text x="308" y="279">PYTHON</text></g>
-        <g class="mono mut"><rect class="hair" x="404" y="260" width="172" height="28" rx="14"/><text x="490" y="279">HAND TRACKING</text></g>
-        <g class="mono mut"><rect class="hair" x="586" y="260" width="172" height="28" rx="14"/><text x="672" y="279">WEB DEVELOPMENT</text></g>
-        <g class="mono mut"><rect class="hair" x="768" y="260" width="172" height="28" rx="14"/><text x="854" y="279">KEDIRI, ID</text></g>
+        <g class="mono mut"><rect class="hair" x="40" y="260" width="172" height="28" rx="14"/><circle class="acc pulse" cx="58" cy="274" r="3"/><text x="132" y="279">WEB SECURITY</text></g>
+        <g class="mono mut"><rect class="hair" x="222" y="260" width="172" height="28" rx="14"/><circle class="blu pulse-2" cx="240" cy="274" r="3"/><text x="314" y="279">PYTHON</text></g>
+        <g class="mono mut"><rect class="hair" x="404" y="260" width="172" height="28" rx="14"/><circle class="grn pulse-3" cx="422" cy="274" r="3"/><text x="496" y="279">HAND TRACKING</text></g>
+        <g class="mono mut"><rect class="hair" x="586" y="260" width="172" height="28" rx="14"/><circle class="amb pulse" cx="604" cy="274" r="3"/><text x="678" y="279">WEB DEVELOPMENT</text></g>
+        <g class="mono mut"><rect class="hair" x="768" y="260" width="172" height="28" rx="14"/><circle class="acc pulse-2" cx="786" cy="274" r="3"/><text x="860" y="279">KEDIRI, ID</text></g>
       </g>
     </g>
   </g>
