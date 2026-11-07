@@ -1,8 +1,8 @@
 ![Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri](assets/banner.svg#gh-light-mode-only)
 ![Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri](assets/banner-dark.svg#gh-dark-mode-only)
 
-<img align="right" width="300" src="assets/mascot.svg#gh-light-mode-only" alt="Maskot D A T Z — gadis anime rambut perak bermata biru, melambaikan tangan di depan laptop dengan panel hologram">
-<img align="right" width="300" src="assets/mascot-dark.svg#gh-dark-mode-only" alt="Maskot D A T Z — gadis anime rambut perak bermata biru, melambaikan tangan di depan laptop dengan panel hologram">
+<img align="right" width="300" src="assets/mascot.svg#gh-light-mode-only" alt="Maskot D A T Z — pemuda anime rambut perak bermata biru, melambaikan tangan di depan laptop dengan panel hologram">
+<img align="right" width="300" src="assets/mascot-dark.svg#gh-dark-mode-only" alt="Maskot D A T Z — pemuda anime rambut perak bermata biru, melambaikan tangan di depan laptop dengan panel hologram">
 
 ## Tentang saya
 
