@@ -1,9 +1,20 @@
 ![Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri](assets/banner.svg#gh-light-mode-only)
 ![Ahmad Roziqin — D A T Z, mahasiswa Teknik Informatika FTIK Universitas Nusantara PGRI Kediri](assets/banner-dark.svg#gh-dark-mode-only)
 
+<img align="right" width="300" src="assets/mascot.svg#gh-light-mode-only" alt="Maskot D A T Z — gadis anime rambut perak bermata biru, melambaikan tangan di depan laptop dengan panel hologram">
+<img align="right" width="300" src="assets/mascot-dark.svg#gh-dark-mode-only" alt="Maskot D A T Z — gadis anime rambut perak bermata biru, melambaikan tangan di depan laptop dengan panel hologram">
+
+## Tentang saya
+
 Saya **Ahmad Roziqin**. Di internet saya biasanya memakai alias **D A T Z**.
 
 Saya mahasiswa Teknik Informatika di Fakultas Teknik dan Ilmu Komputer (FTIK), Universitas Nusantara PGRI Kediri. GitHub ini tempat saya menyimpan eksperimen, skrip yang benar-benar saya pakai, dan website yang saya pegang sendiri.
+
+Sekarang saya merakit tiga alat yang saya pakai sendiri: **WebWarden** (pemindai keamanan web), **NetWarden** (penjaga jaringan lokal), dan **DATZ** (konsol lab keamanan).
+
+- Keamanan aplikasi web — merakit engine pemindai sendiri.
+- Python & web development — membangun, bukan cuma memakai.
+- Hand tracking — menyentuh layar tanpa menyentuhnya.
 
 ![](assets/divider.svg#gh-light-mode-only)
 ![](assets/divider-dark.svg#gh-dark-mode-only)
